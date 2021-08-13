@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>More Events</h2>
+    <section>
+        <h3 id="secrite-info">Very very important secrite event</h3>
+        <input id="detete-confarm" type="text" placeholder="plase type your delete">
+        <button id="dalete-btn" disabled >Dalate</button>
+    </section>
+
+    <!-- script -->
+    <script>
+        // click
+        document.getElementById('dalete-btn').addEventListener('click', function(){
+            document.getElementById('secrite-info').style.display = 'none';
+        })
+
+        // Focuse
+        document.getElementById('detete-confarm').addEventListener('focus', function(){
+            document.body.style.backgroundColor = 'red'
+        })
+        // Blur
+        document.getElementById('detete-confarm').addEventListener('blur', function(){
+            document.body.style.backgroundColor = 'white'
+        })
+        // Keydown 
+        /*
+        document.getElementById('detete-confarm').addEventListener('keydown', function(){
+           const deleteFiledest = document.getElementById('detete-confarm');
+           console.log(deleteFiledest.value);
+        })
+        */
+       /*
+        // Keypress
+        document.getElementById('detete-confarm').addEventListener('keypress', function(){
+           const deleteFiledest = document.getElementById('detete-confarm');
+           console.log(deleteFiledest.value);
+        })
+        */
+       /*
+        // Keyup
+        document.getElementById('detete-confarm').addEventListener('keyup', function(){
+           const deleteFiledest = document.getElementById('detete-confarm');
+           console.log(deleteFiledest.value);
+        })
+         */
+        /*
+        // change
+        document.getElementById('detete-confarm').addEventListener('change', function(){
+           const deleteFiledest = document.getElementById('detete-confarm');
+           console.log(deleteFiledest.value);
+        })
+        */
+
+        // Keyup
+        document.getElementById('detete-confarm').addEventListener('keyup', function(event){
+           const deleteFiledest = document.getElementById('detete-confarm');
+        //    console.log(event);
+        const daleteBtn = document.getElementById('dalete-btn');
+        if(event.target.value == 'delete'){
+            daleteBtn.removeAttribute('disabled');
+        }
+        else {
+            daleteBtn.setAttribute('disabled', true);
+        }
+
+    })
+    </script>
+
+</body>
+</html>
